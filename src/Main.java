@@ -6,10 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import modeles.Arezzo;
-import vues.VueClavier;
-import vues.VueMenus;
-import vues.VuePartition;
-import vues.VueTitre;
+import vues.*;
 
 import java.io.IOException;
 
@@ -26,12 +23,14 @@ public class Main extends Application {
         VueClavier vueClavier = new VueClavier(arezzo);
         VuePartition vuePartition = new VuePartition(arezzo);
         VueTitre vueTitre = new VueTitre(arezzo);
+        VueOption vueOption = new VueOption(arezzo);
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(VueMenus.class)) return vueMenus;
             else if (ic.equals(VueClavier.class)) return vueClavier;
             else if (ic.equals(VuePartition.class)) return vuePartition;
             else if (ic.equals(VueTitre.class)) return  vueTitre;
+            else if (ic.equals(VueOption.class)) return  vueOption;
             else // par défaut...
             return null ;
         });

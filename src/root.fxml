@@ -24,6 +24,7 @@
         <HBox prefHeight="406.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
             <children>
                <fx:include source="vues/vueclavier.fxml" />
+                <fx:include source="vues/vueoption.fxml" />
             </children>
         </HBox>
     </bottom>
