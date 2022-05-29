@@ -120,7 +120,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Slider blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="1.0" GridPane.columnIndex="1">
+            <Slider blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="25.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

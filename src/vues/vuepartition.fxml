@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="390.0" minWidth="1400.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F8F9FA;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="vues.VuePartition" />
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="390.0" minWidth="1000.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VuePartition">
+   <content>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="imagepartition" />
+   </content>
+</ScrollPane>

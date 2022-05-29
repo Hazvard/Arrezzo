@@ -43,25 +43,7 @@ public class VueOption {
     public void setInstrument(ActionEvent actionEvent) {
         if(actionEvent.getSource().getClass().equals(RadioButton.class)) {
             RadioButton bout = (RadioButton) actionEvent.getSource();
-
-            switch (bout.getId()){
-
-                case "piano":
-                    arezzo.setInstrument(0);
-                    break;
-
-                case "guitare":
-                    arezzo.setInstrument(1);
-                    break;
-
-                case "saxophone":
-                    arezzo.setInstrument(2);
-                    break;
-
-                case "trompette":
-                    arezzo.setInstrument(3);
-                    break;
-            }
+            arezzo.setInstrument(bout.getId());
         }
 
     }

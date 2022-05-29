@@ -8,12 +8,13 @@ import javafx.stage.Stage;
 import modeles.Arezzo;
 import vues.*;
 
+import javax.sound.midi.MidiUnavailableException;
 import java.io.IOException;
 
 public class Main extends Application {
 
     @Override
-    public void start (Stage primaryStage) throws IOException {
+    public void start (Stage primaryStage) throws IOException, MidiUnavailableException {
         Arezzo arezzo = new Arezzo();
         FXMLLoader loader = new FXMLLoader();
 
