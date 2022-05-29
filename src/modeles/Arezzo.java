@@ -29,6 +29,7 @@ public class Arezzo {
         partitionBuilder = new StringBuilder();
         synthesizer = MidiSystem.getSynthesizer();
         partition = new Partition(synthesizer);
+        partition.setPreferedMaxWidth(500);
         observateurs = new ArrayList<>();
         this.instrument = "Piano";
         demiTemps = false;
@@ -178,6 +179,7 @@ public class Arezzo {
         }else if(duree == 1){
 
             quartTemps++;
+
             if(note.equals("chut")){
                 creationNote.append("1");
             }
@@ -189,6 +191,7 @@ public class Arezzo {
         }else if(duree == 2){
             if(quartTemps + 2 <= 4){
 
+                quartTemps +=2;
                 creationNote.append("2");
                 partitionBuilder.append(creationNote);
                 jouerUnSon(creationNote.toString());
@@ -199,6 +202,7 @@ public class Arezzo {
         }else if(duree == 3){
             if(quartTemps + 4 <= 4){
 
+                quartTemps +=4;
                 creationNote.append("4");
                 partitionBuilder.append(creationNote);
                 jouerUnSon(creationNote.toString());
@@ -208,10 +212,14 @@ public class Arezzo {
         }
 
         // On remet quartTemps à 0 si on a finit le quart
-        if(quartTemps == 4)
+        if(quartTemps == 4){
             quartTemps = 0;
+            partitionBuilder.append("|");
+        }
 
-        System.out.println(partition.toString());
+
+        //System.out.println(partitionBuilder.toString());
+        //System.out.println(quartTemps);
         reagir();
     }
 

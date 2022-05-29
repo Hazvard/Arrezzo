@@ -128,7 +128,7 @@
                   <Insets right="10.0" />
                </padding>
             </Slider>
-            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="40.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

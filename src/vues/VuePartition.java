@@ -22,7 +22,6 @@ public class VuePartition implements Observateur {
 
     @Override
     public void reagir() {
-        Image img = arezzo.getImage();
-        imagepartition = new ImageView(img);
+        imagepartition.setImage(arezzo.getImage());
     }
 }
