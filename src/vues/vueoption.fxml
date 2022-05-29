@@ -30,7 +30,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="144.0" prefWidth="408.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <RadioButton mnemonicParsing="false" selected="true" text="Piano">
+            <RadioButton mnemonicParsing="false" selected="true" text="Piano" fx:id="piano" onAction="#setInstrument">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -38,9 +38,9 @@
                   <ToggleGroup fx:id="instrument" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Guitare" toggleGroup="$instrument" />
-            <RadioButton mnemonicParsing="false" text="Saxophone" toggleGroup="$instrument" />
-            <RadioButton mnemonicParsing="false" text="Trompette" toggleGroup="$instrument" />
+            <RadioButton mnemonicParsing="false" text="Guitare" toggleGroup="$instrument" fx:id="guitare" onAction="#setInstrument"/>
+            <RadioButton mnemonicParsing="false" text="Saxophone" toggleGroup="$instrument" fx:id="saxophone" onAction="#setInstrument"/>
+            <RadioButton mnemonicParsing="false" text="Trompette" toggleGroup="$instrument" fx:id="trompette" onAction="#setInstrument"/>
          </children>
          <GridPane.margin>
             <Insets />
@@ -48,27 +48,27 @@
       </HBox>
       <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="25.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <children>
-            <RadioButton mnemonicParsing="false" text="Aïgu">
+            <RadioButton mnemonicParsing="false" text="Aïgu" fx:id="aigu" onAction="#setOctave" >
                <toggleGroup>
                   <ToggleGroup fx:id="octaves" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" selected="true" text="Medium" toggleGroup="$octaves" />
-            <RadioButton mnemonicParsing="false" text="Grave" toggleGroup="$octaves" />
+            <RadioButton mnemonicParsing="false" selected="true" text="Medium" toggleGroup="$octaves" fx:id="medium" onAction="#setOctave" />
+            <RadioButton mnemonicParsing="false" text="Grave" toggleGroup="$octaves" fx:id="grave" onAction="#setOctave" />
          </children>
       </VBox>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
             <VBox alignment="BOTTOM_LEFT" prefHeight="143.0" prefWidth="6.0" spacing="25.0">
                <children>
-                  <RadioButton mnemonicParsing="false">
+                  <RadioButton mnemonicParsing="false" fx:id="ronde" onAction="#setDuree">
                      <toggleGroup>
                         <ToggleGroup fx:id="duree" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$duree" />
-                  <RadioButton mnemonicParsing="false" toggleGroup="$duree" />
-                  <RadioButton mnemonicParsing="false" selected="true" toggleGroup="$duree" />
+                  <RadioButton mnemonicParsing="false" toggleGroup="$duree" fx:id="blanche" onAction="#setDuree" />
+                  <RadioButton mnemonicParsing="false" selected="true" toggleGroup="$duree" fx:id="noire" onAction="#setDuree" />
+                  <RadioButton mnemonicParsing="false" toggleGroup="$duree" fx:id="croche" onAction="#setDuree" />
                </children>
             </VBox>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
