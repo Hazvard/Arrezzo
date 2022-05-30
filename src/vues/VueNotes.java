@@ -19,12 +19,11 @@ public class VueNotes implements  Observateur{
         notes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         // renderer de cellules
-        notes.setCellFactory(lv -> new CompoCell());
+        notes.setCellFactory(lv -> new CompoCell(arezzo));
     }
 
     @Override
     public void reagir() {
         notes.getItems().clear();
-        this.arezzo.
     }
 }

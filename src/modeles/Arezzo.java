@@ -22,16 +22,16 @@ public class Arezzo {
     private int duree;
     private double volume;
     private int tempo;
-    private String instrument;
+    private String titre;
 
 
     public Arezzo() throws MidiUnavailableException {
         partitionBuilder = new StringBuilder();
         synthesizer = MidiSystem.getSynthesizer();
         partition = new Partition(synthesizer);
-        partition.setPreferedMaxWidth(500);
+        partition.setPreferedMaxWidth(900);
         observateurs = new ArrayList<>();
-        this.instrument = "Piano";
+        titre = "titre";
         demiTemps = false;
         quartTemps = 0;
         volume = 25.0;
@@ -228,6 +228,19 @@ public class Arezzo {
 
     }
 
+    public void setTitre(String titre){
+        this.titre = titre;
+    }
+
+    public String getTitre(){
+        return titre;
+    }
+
+    public void jouerLaMelodie(){
+        partition.setMelodie(partitionBuilder.toString());
+        partition.play();
+    }
+
     public void ajouterObservateur(Observateur observateur){
         observateurs.add(observateur);
     }
@@ -246,10 +259,10 @@ public class Arezzo {
     }
 
     public void setInstrument(String instrument) {
-        this.instrument = instrument;
+        partition.setInstrument(instrument);
     }
 
-    public void setVolume( int volume) {
+    public void setVolume( double volume) {
         this.volume = volume;
         partition.setVolume(this.volume);
     }

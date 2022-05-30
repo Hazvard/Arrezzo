@@ -1,18 +1,55 @@
 package vues;
 
+import javafx.animation.RotateTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Slider;
+import javafx.util.Duration;
 import modeles.Arezzo;
 
 public class VueOption {
 
     private Arezzo arezzo;
 
+    @FXML
+    Button play;
+
+    @FXML
+    Slider volume;
+
+    @FXML
+    Slider tempo;
+
 
 
     public VueOption(Arezzo arezzo){
         this.arezzo = arezzo;
+
+        /*//volume.valueProperty().addListener(new ChangeListener<Number>() {
+        //                                       @Override
+        //                                       public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+        //                                           arezzo.setVolume((double) t1);
+        //                                       }
+        //                                   }
+
+        );
+
+        tempo.valueProperty().addListener(new ChangeListener<Number>() {
+                                               @Override
+                                               public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                                                   arezzo.setTempo((int) t1);
+                                               }
+                                           }
+
+        /*
+        );
+         */
+
+
     }
 
     public void setDuree(ActionEvent actionEvent) {
@@ -67,5 +104,16 @@ public class VueOption {
                     break;
             }
         }
+    }
+
+    public void play(ActionEvent actionEvent) {
+            arezzo.jouerLaMelodie();
+            Duration duration = Duration.millis(1500);
+            RotateTransition rotateTransition = new RotateTransition(duration, play);
+            rotateTransition.setByAngle(720);
+            rotateTransition.play();
+
+
+
     }
 }

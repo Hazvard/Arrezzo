@@ -30,7 +30,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="144.0" prefWidth="408.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <RadioButton mnemonicParsing="false" selected="true" text="Piano" fx:id="piano" onAction="#setInstrument">
+            <RadioButton mnemonicParsing="false" selected="true" text="Piano" fx:id="Piano" onAction="#setInstrument">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -38,9 +38,9 @@
                   <ToggleGroup fx:id="instrument" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="Guitare" toggleGroup="$instrument" fx:id="guitare" onAction="#setInstrument"/>
-            <RadioButton mnemonicParsing="false" text="Saxophone" toggleGroup="$instrument" fx:id="saxophone" onAction="#setInstrument"/>
-            <RadioButton mnemonicParsing="false" text="Trompette" toggleGroup="$instrument" fx:id="trompette" onAction="#setInstrument"/>
+            <RadioButton mnemonicParsing="false" text="Guitare" toggleGroup="$instrument" fx:id="Guitare" onAction="#setInstrument"/>
+            <RadioButton mnemonicParsing="false" text="Saxophone" toggleGroup="$instrument" fx:id="Saxophone" onAction="#setInstrument"/>
+            <RadioButton mnemonicParsing="false" text="Trompette" toggleGroup="$instrument" fx:id="Trompette" onAction="#setInstrument"/>
          </children>
          <GridPane.margin>
             <Insets />
@@ -99,7 +99,7 @@
       </HBox>
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
          <center>
-            <Button mnemonicParsing="false" style="-fx-background-color: #CED4DA;" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" style="-fx-background-color: #CED4DA;" textAlignment="CENTER" BorderPane.alignment="CENTER" fx:id="play" onAction="#play">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -120,7 +120,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Slider blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="25.0" GridPane.columnIndex="1">
+            <Slider blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="25.0" GridPane.columnIndex="1" fx:id="volume">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
@@ -128,7 +128,7 @@
                   <Insets right="10.0" />
                </padding>
             </Slider>
-            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="tempo">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
