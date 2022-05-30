@@ -120,7 +120,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Slider blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="25.0" GridPane.columnIndex="1" fx:id="volume">
+            <Slider fx:id="volume" blockIncrement="25.0" prefHeight="38.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" value="25.0" GridPane.columnIndex="1" onMouseReleased="#setVolume">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
@@ -128,7 +128,7 @@
                   <Insets right="10.0" />
                </padding>
             </Slider>
-            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="tempo">
+            <Slider max="220.0" min="40.0" showTickLabels="true" showTickMarks="true" value="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="tempo" onMouseReleased="#setTempo">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

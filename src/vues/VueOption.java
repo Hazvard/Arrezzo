@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import modeles.Arezzo;
 
@@ -29,28 +30,11 @@ public class VueOption {
     public VueOption(Arezzo arezzo){
         this.arezzo = arezzo;
 
-        /*//volume.valueProperty().addListener(new ChangeListener<Number>() {
-        //                                       @Override
-        //                                       public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-        //                                           arezzo.setVolume((double) t1);
-        //                                       }
-        //                                   }
-
-        );
-
-        tempo.valueProperty().addListener(new ChangeListener<Number>() {
-                                               @Override
-                                               public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                                                   arezzo.setTempo((int) t1);
-                                               }
-                                           }
-
-        /*
-        );
-         */
 
 
     }
+
+
 
     public void setDuree(ActionEvent actionEvent) {
         if(actionEvent.getSource().getClass().equals(RadioButton.class)) {   //Pour vérifier que tu appuis bien sur un bouton
@@ -115,5 +99,14 @@ public class VueOption {
 
 
 
+    }
+
+    public void setVolume() {
+        arezzo.setVolume(volume.getValue());
+        System.out.println(volume.getValue());
+    }
+
+    public void setTempo(MouseEvent mouseEvent) {
+        arezzo.setTempo( (int) tempo.getValue());
     }
 }

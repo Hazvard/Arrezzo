@@ -26,6 +26,7 @@ public class Arezzo {
 
 
     public Arezzo() throws MidiUnavailableException {
+
         partitionBuilder = new StringBuilder();
         synthesizer = MidiSystem.getSynthesizer();
         partition = new Partition(synthesizer);
@@ -36,6 +37,8 @@ public class Arezzo {
         quartTemps = 0;
         volume = 25.0;
         tempo = 45;
+
+        partition.setVolume(volume);
 
 
 
@@ -264,12 +267,12 @@ public class Arezzo {
 
     public void setVolume( double volume) {
         this.volume = volume;
-        partition.setVolume(this.volume);
+        partition.setVolume(1.0);
     }
 
     public void setTempo(int tempo) {
         this.tempo = tempo;
-        partition.setTempo( this.tempo);
+        partition.setTempo(tempo);
     }
 
     public Image getImage(){
