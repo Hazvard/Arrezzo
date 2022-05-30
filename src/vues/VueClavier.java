@@ -38,8 +38,6 @@ public class VueClavier extends TilePane {
                 alert.showAndWait();
 
             }
-            System.out.println(bout.getId());
-
         }
     }
 }

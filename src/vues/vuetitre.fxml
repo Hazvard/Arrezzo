@@ -3,4 +3,4 @@
 <?import javafx.scene.control.Label?>
 
 
-<Label alignment="CENTER" contentDisplay="CENTER" minHeight="35.0" minWidth="1600.0" style="-fx-background-color: #CED4DA; -fx-text-fill: #212529; -fx-font-size: 25;" text="Titre" textAlignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueTitre" fx:id="titre" />
+<Label alignment="CENTER" contentDisplay="CENTER" minHeight="35.0" minWidth="1600.0" style="-fx-background-color: #CED4DA; -fx-text-fill: #212529; -fx-font-size: 25;" text="Nouveau Projet" textAlignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.VueMenus" fx:id="titre" />

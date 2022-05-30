@@ -8,7 +8,7 @@
   <menus>
     <Menu mnemonicParsing="false" text="Mélodie">
       <items>
-        <MenuItem mnemonicParsing="false" text="Nouveau" />
+        <MenuItem mnemonicParsing="false" text="Nouveau" fx:id="nouveau" onAction="#nouveau" />
             <MenuItem mnemonicParsing="false" text="Ouvrir" />
             <MenuItem mnemonicParsing="false" text="Enregistrer sous ..." />
             <MenuItem mnemonicParsing="false" text="Quitter" fx:id="quitter" onAction="#quitter"/>
@@ -16,8 +16,8 @@
     </Menu>
     <Menu mnemonicParsing="false" text="Outils">
       <items>
-        <MenuItem mnemonicParsing="false" text="Renommer" />
-            <MenuItem mnemonicParsing="false" text="Transposer" />
+        <MenuItem mnemonicParsing="false" text="Renommer" fx:id="rennomer" onAction="#renommer"/>
+            <MenuItem mnemonicParsing="false" text="Transposer" fx:id="transposer" onAction="#transposer"/>
       </items>
     </Menu>
   </menus>

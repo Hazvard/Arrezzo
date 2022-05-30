@@ -23,14 +23,12 @@ public class Main extends Application {
         VueMenus vueMenus = new VueMenus(arezzo);
         VueClavier vueClavier = new VueClavier(arezzo);
         VuePartition vuePartition = new VuePartition(arezzo);
-        VueTitre vueTitre = new VueTitre(arezzo);
         VueOption vueOption = new VueOption(arezzo);
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(VueMenus.class)) return vueMenus;
             else if (ic.equals(VueClavier.class)) return vueClavier;
             else if (ic.equals(VuePartition.class)) return vuePartition;
-            else if (ic.equals(VueTitre.class)) return  vueTitre;
             else if (ic.equals(VueOption.class)) return  vueOption;
             else // par défaut...
             return null ;
