@@ -20,6 +20,11 @@
         <fx:include source="vues/vuepartition.fxml" />
     </left>
 
+    <center>
+        <fx:include source="vues/vuebutton.fxml" />
+
+    </center >
+
     <bottom>
         <HBox prefHeight="406.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
             <children>
