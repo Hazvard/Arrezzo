@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Arezzo {
 
     private ArrayList<Observateur> observateurs;
+    private ArrayList<String> listeDeNote;
     private StringBuilder partitionBuilder;
     private Synthesizer synthesizer;
     private Partition partition;
@@ -20,14 +21,13 @@ public class Arezzo {
     private boolean demiTemps;
     private int octave;
     private int duree;
-    private double volume;
-    private int tempo;
     private String titre;
 
 
     public Arezzo() throws MidiUnavailableException {
 
         partitionBuilder = new StringBuilder();
+        listeDeNote = new ArrayList<>();
         synthesizer = MidiSystem.getSynthesizer();
         partition = new Partition(synthesizer);
         partition.setPreferedMaxWidth(900);
@@ -35,10 +35,6 @@ public class Arezzo {
         titre = "titre";
         demiTemps = false;
         quartTemps = 0;
-        volume = 25.0;
-        tempo = 45;
-
-        partition.setVolume(volume);
 
 
 
@@ -266,17 +262,23 @@ public class Arezzo {
     }
 
     public void setVolume( double volume) {
-        this.volume = volume;
-        partition.setVolume(1.0);
+        partition.setVolume(volume);
     }
 
     public void setTempo(int tempo) {
-        this.tempo = tempo;
         partition.setTempo(tempo);
     }
 
     public Image getImage(){
         partition.setMelodie(partitionBuilder.toString());
         return partition.getImage();
+    }
+
+    public void stop(){
+        partition.close();
+    }
+
+    public void transposer(){
+
     }
 }

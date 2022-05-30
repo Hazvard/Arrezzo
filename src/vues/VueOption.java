@@ -103,10 +103,9 @@ public class VueOption {
 
     public void setVolume() {
         arezzo.setVolume(volume.getValue());
-        System.out.println(volume.getValue());
     }
 
-    public void setTempo(MouseEvent mouseEvent) {
+    public void setTempo() {
         arezzo.setTempo( (int) tempo.getValue());
     }
 }
