@@ -24,9 +24,7 @@ public class VueMenus extends MenuBar {
     }
 
     public void quitter() {
-        Platform.exit();
-        arezzo.stop();
-        System.exit(0);
+        arezzo.quitter();
     }
 
     public void transposer() {

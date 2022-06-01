@@ -1,6 +1,7 @@
 package modeles;
 
 import exceptions.DureeException;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import partition.Partition;
 import vues.Observateur;
@@ -280,6 +281,12 @@ public class Arezzo {
         partition.close();
     }
 
+    public void quitter(){
+        Platform.exit();
+        stop();
+        System.exit(0);
+    }
+
     public void renommer(String name){
         titre = name;
     }
@@ -385,4 +392,9 @@ public class Arezzo {
         partition = new Partition(synthesizer);
         reagir();
     }
+
+    public ArrayList<String> getListeDeNote() {
+        return listeDeNote;
+    }
+
 }

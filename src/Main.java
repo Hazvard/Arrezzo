@@ -24,12 +24,14 @@ public class Main extends Application {
         VueClavier vueClavier = new VueClavier(arezzo);
         VuePartition vuePartition = new VuePartition(arezzo);
         VueOption vueOption = new VueOption(arezzo);
+        VueButton vueButton = new VueButton(arezzo);
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(VueMenus.class)) return vueMenus;
             else if (ic.equals(VueClavier.class)) return vueClavier;
             else if (ic.equals(VuePartition.class)) return vuePartition;
             else if (ic.equals(VueOption.class)) return  vueOption;
+            else if (ic.equals(VueButton.class)) return  vueButton;
             else // par défaut...
             return null ;
         });
