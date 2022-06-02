@@ -9,7 +9,7 @@ import modeles.Arezzo;
 import javax.sound.midi.MidiUnavailableException;
 import java.util.Optional;
 
-public class VueMenus extends MenuBar {
+public class VueMenus {
 
     private Arezzo arezzo;
 

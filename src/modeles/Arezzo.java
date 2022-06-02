@@ -230,10 +230,6 @@ public class Arezzo {
 
     }
 
-    public void setTitre(String titre){
-        this.titre = titre;
-    }
-
     public String getTitre(){
         return titre;
     }

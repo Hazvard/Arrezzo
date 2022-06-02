@@ -29,9 +29,6 @@ public class VueOption {
 
     public VueOption(Arezzo arezzo){
         this.arezzo = arezzo;
-
-
-
     }
 
 
@@ -90,7 +87,7 @@ public class VueOption {
         }
     }
 
-    public void play(ActionEvent actionEvent) {
+    public void play() {
             arezzo.jouerLaMelodie();
             Duration duration = Duration.millis(1500);
             RotateTransition rotateTransition = new RotateTransition(duration, play);

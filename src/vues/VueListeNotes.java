@@ -15,12 +15,12 @@ import java.awt.Menu;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VueListeNotes extends ListCell<String> implements Initializable, Observateur {
+public class VueListeNotes implements Initializable, Observateur {
     @FXML
     private ListView<String> liste;
 
     private Arezzo arezzo;
-    ObservableList listeDeNotes;
+    private ObservableList listeDeNotes;
 
     private ContextMenu menu;
     private MenuItem effacer;
@@ -52,10 +52,6 @@ public class VueListeNotes extends ListCell<String> implements Initializable, Ob
 
     }
 
-    public void updateItem(String item, boolean empty){
-        // Maj des composants
-    }
-
     @Override
     public void reagir() {
         listeDeNotes = FXCollections.observableArrayList(arezzo.getListeDeNote());
@@ -68,7 +64,7 @@ public class VueListeNotes extends ListCell<String> implements Initializable, Ob
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listeDeNotes = FXCollections.observableArrayList(arezzo.getListeDeNote());
         liste.setItems(listeDeNotes);
-        liste.setCellFactory((listView -> new CompoCell(arezzo)));
+        liste.setCellFactory((listView -> new CompoCell()));
         liste.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         liste.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue )->

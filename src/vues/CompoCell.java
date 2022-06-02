@@ -23,11 +23,10 @@ public class CompoCell extends ListCell<String> {
     @FXML
     private HBox box;
 
-    private Arezzo arezzo ;
     private FXMLLoader loader;
 
-    public CompoCell(Arezzo arezzo){
-        this.arezzo = arezzo;
+    public CompoCell(){
+
     }
 
     private void remplirCellule(String item){
