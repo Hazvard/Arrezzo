@@ -39,7 +39,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(loader.load(), 1600, 900));
         primaryStage.getIcons().add(new Image("/images/logo_azzero.png"));
-        primaryStage.setTitle("Azzero");
+        primaryStage.setTitle("Arezzo");
         primaryStage.show();
     }
 
