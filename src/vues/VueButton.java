@@ -3,6 +3,7 @@ package vues;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import modeles.Arezzo;
 
@@ -11,12 +12,14 @@ import java.io.IOException;
 public class VueButton {
 
     private Arezzo arezzo;
+    private Stage stageParent;
 
-    public VueButton(Arezzo arezzo){
+    public VueButton(Arezzo arezzo, Stage stage){
 
         this.arezzo = arezzo;
-    }
+        this.stageParent = stage;
 
+    }
 
     public void boutonactive() {
 
@@ -35,7 +38,9 @@ public class VueButton {
 
         Stage affichageListeNotes = new Stage();
         affichageListeNotes.setScene(listeNotes);
+        affichageListeNotes.initOwner(stageParent);
         affichageListeNotes.setTitle("Liste de notes");
+        affichageListeNotes.getIcons().add(new Image("/images/logo_azzero.png"));
         affichageListeNotes.showAndWait();
     }
 }

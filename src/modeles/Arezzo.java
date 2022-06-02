@@ -2,6 +2,7 @@ package modeles;
 
 import exceptions.DureeException;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 import partition.Partition;
 import vues.Observateur;
@@ -10,6 +11,7 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ListIterator;
 
 public class Arezzo {
@@ -213,9 +215,7 @@ public class Arezzo {
             //listeDeNote.add("|");
         }
 
-        //System.out.println(creationNote);
-        //System.out.println(partitionBuilder.toString());
-        //System.out.println(quartTemps);
+
         reagir();
     }
 
@@ -297,61 +297,242 @@ public class Arezzo {
         ListIterator itr = listeDeNote.listIterator();
         while (itr.hasNext()){
             String note = itr.next().toString();
+            StringBuilder notecreation = new StringBuilder(note);
+
             if (note.contains("^C")){
-                itr.set("D");
+                notecreation.replace(0, 2, "D");
             }else if (note.contains("^D")){
-                itr.set("E");
+                notecreation.replace(0, 2, "E");
             }else if (note.contains("^F")){
-                itr.set("G");
+                notecreation.replace(0, 2, "G");
             }else if (note.contains("^G")){
-                itr.set("A");
+                notecreation.replace(0, 2, "A");
             }else if (note.contains("^A")){
-                itr.set("B");
+                notecreation.replace(0, 2, "B");
             }else if (note.contains("A")){
-                itr.set("^A");
+                notecreation.replace(0, 1, "^A");
             }else if (note.contains("B")){
-                itr.set("C");
+                notecreation.replace(0, 1, "C");
             }else if (note.contains("C")){
-                itr.set("^C");
+                notecreation.replace(0, 1, "^C");
             }else if (note.contains("D")){
-                itr.set("^D");
+                notecreation.replace(0, 1, "^D");
             }else if (note.contains("E")){
-                itr.set("F");
+                notecreation.replace(0, 1, "F");
             }else if (note.contains("F")){
-                itr.set("^F");
+                notecreation.replace(0, 1, "^F");
             }else if (note.contains("G")){
-                itr.set("^G"); // Maintenant pour les minuscules
+                notecreation.replace(0, 1, "^G"); // Maintenant pour les minuscules
             }else if (note.contains("^c")){
-                itr.set("d");
+                notecreation.replace(0, 2, "d");
             }else if (note.contains("^d")){
-                itr.set("e");
+                notecreation.replace(0, 2, "e");
             }else if (note.contains("^f")){
-                itr.set("g");
+                notecreation.replace(0, 2, "g");
             }else if (note.contains("^g")){
-                itr.set("a");
+                notecreation.replace(0, 2, "a");
             }else if (note.contains("^a")){
-                itr.set("b");
+                notecreation.replace(0, 2, "b");
             }else if (note.contains("a")){
-                itr.set("^a");
+                notecreation.replace(0, 1, "^a");
             }else if (note.contains("b")){
-                itr.set("c");
+                notecreation.replace(0, 1, "c");
             }else if (note.contains("c")){
-                itr.set("^c");
+                notecreation.replace(0, 1, "^c");
             }else if (note.contains("d")){
-                itr.set("^d");
+                notecreation.replace(0, 1, "^d");
             }else if (note.contains("e")){
-                itr.set("f");
+                notecreation.replace(0, 1, "f");
             }else if (note.contains("f")){
-                itr.set("^f");
+                notecreation.replace(0, 1, "^f");
             }else if (note.contains("g")){
-                itr.set("^g");
+                notecreation.replace(0, 1, "^g");
             }
+
+            itr.set(notecreation.toString());
         }
 
         this.listeVersPartionBuilder();
 
         partition.setMelodie(partitionBuilder.toString());
         reagir();
+    }
+
+    public void augmenterDemiTon(ObservableList<Integer> liste){
+        Iterator<Integer> iter = liste.iterator();
+        while (iter.hasNext()){
+            Integer position = iter.next();
+            String note = listeDeNote.get(position);
+            StringBuilder notecreation = new StringBuilder(listeDeNote.get(position));
+
+            if (note.contains("^C")){
+                notecreation.replace(0, 2, "D");
+            }else if (note.contains("^D")){
+                notecreation.replace(0, 2, "E");
+            }else if (note.contains("^F")){
+                notecreation.replace(0, 2, "G");
+            }else if (note.contains("^G")){
+                notecreation.replace(0, 2, "A");
+            }else if (note.contains("^A")){
+                notecreation.replace(0, 2, "B");
+            }else if (note.contains("A")){
+                notecreation.replace(0, 1, "^A");
+            }else if (note.contains("B")){
+                notecreation.replace(0, 1, "C");
+            }else if (note.contains("C")){
+                notecreation.replace(0, 1, "^C");
+            }else if (note.contains("D")){
+                notecreation.replace(0, 1, "^D");
+            }else if (note.contains("E")){
+                notecreation.replace(0, 1, "F");
+            }else if (note.contains("F")){
+                notecreation.replace(0, 1, "^F");
+            }else if (note.contains("G")){
+                notecreation.replace(0, 1, "^G"); // Maintenant pour les minuscules
+            }else if (note.contains("^c")){
+                notecreation.replace(0, 2, "d");
+            }else if (note.contains("^d")){
+                notecreation.replace(0, 2, "e");
+            }else if (note.contains("^f")){
+                notecreation.replace(0, 2, "g");
+            }else if (note.contains("^g")){
+                notecreation.replace(0, 2, "a");
+            }else if (note.contains("^a")){
+                notecreation.replace(0, 2, "b");
+            }else if (note.contains("a")){
+                notecreation.replace(0, 1, "^a");
+            }else if (note.contains("b")){
+                notecreation.replace(0, 1, "c");
+            }else if (note.contains("c")){
+                notecreation.replace(0, 1, "^c");
+            }else if (note.contains("d")){
+                notecreation.replace(0, 1, "^d");
+            }else if (note.contains("e")){
+                notecreation.replace(0, 1, "f");
+            }else if (note.contains("f")){
+                notecreation.replace(0, 1, "^f");
+            }else if (note.contains("g")){
+                notecreation.replace(0, 1, "^g");
+            }
+
+            listeDeNote.remove( (int) position);
+            listeDeNote.add(position, notecreation.toString());
+
+        }
+
+        this.listeVersPartionBuilder();
+
+        partition.setMelodie(partitionBuilder.toString());
+        reagir();
+
+    }
+
+    public void descendreDemiTon(ObservableList<Integer> liste){
+        Iterator<Integer> iter = liste.iterator();
+        while (iter.hasNext()){
+            Integer position = iter.next();
+            String note = listeDeNote.get(position);
+            StringBuilder notecreation = new StringBuilder(listeDeNote.get(position));
+
+            if (note.contains("^C")){
+                notecreation.replace(0, 2, "C");
+            }else if (note.contains("^D")){
+                notecreation.replace(0, 2, "D");
+            }else if (note.contains("^F")){
+                notecreation.replace(0, 2, "F");
+            }else if (note.contains("^G")){
+                notecreation.replace(0, 2, "G");
+            }else if (note.contains("^A")){
+                notecreation.replace(0, 2, "A");
+            }else if (note.contains("A")){
+                notecreation.replace(0, 1, "^G");
+            }else if (note.contains("B")){
+                notecreation.replace(0, 1, "^A");
+            }else if (note.contains("C")){
+                notecreation.replace(0, 1, "B");
+            }else if (note.contains("D")){
+                notecreation.replace(0, 1, "^C");
+            }else if (note.contains("E")){
+                notecreation.replace(0, 1, "^D");
+            }else if (note.contains("F")){
+                notecreation.replace(0, 1, "E");
+            }else if (note.contains("G")){
+                notecreation.replace(0, 1, "^F"); // Maintenant pour les minuscules
+            }else if (note.contains("^c")){
+                notecreation.replace(0, 2, "c");
+            }else if (note.contains("^d")){
+                notecreation.replace(0, 2, "d");
+            }else if (note.contains("^f")){
+                notecreation.replace(0, 2, "f");
+            }else if (note.contains("^g")){
+                notecreation.replace(0, 2, "g");
+            }else if (note.contains("^a")){
+                notecreation.replace(0, 2, "a");
+            }else if (note.contains("a")){
+                notecreation.replace(0, 1, "^g");
+            }else if (note.contains("b")){
+                notecreation.replace(0, 1, "^a");
+            }else if (note.contains("c")){
+                notecreation.replace(0, 1, "b");
+            }else if (note.contains("d")){
+                notecreation.replace(0, 1, "^c");
+            }else if (note.contains("e")){
+                notecreation.replace(0, 1, "^d");
+            }else if (note.contains("f")){
+                notecreation.replace(0, 1, "e");
+            }else if (note.contains("g")){
+                notecreation.replace(0, 1, "^f");
+            }
+
+            listeDeNote.remove( (int) position);
+            listeDeNote.add(position, notecreation.toString());
+
+        }
+
+        this.listeVersPartionBuilder();
+
+        partition.setMelodie(partitionBuilder.toString());
+        reagir();
+    }
+
+
+
+    public void effacerNotes(ObservableList<Integer> liste){
+        Iterator<Integer> iter = liste.iterator();
+        while (iter.hasNext()){
+            Integer position = iter.next();
+            String note = listeDeNote.get(position);
+            if(note.contains("z") && position == (listeDeNote.size() - 1)){
+
+                listeDeNote.remove((int) position);
+
+            }else if(note.contains("/")){
+
+                listeDeNote.remove((int) position);
+                listeDeNote.add(position, "z1/2");
+
+            }else if(note.contains("2")){
+
+                listeDeNote.remove((int) position);
+                listeDeNote.add(position, "z2");
+
+            }else if(note.contains("4")){
+
+                listeDeNote.remove((int) position);
+                listeDeNote.add(position, "z4");
+
+            }else {
+
+                listeDeNote.remove((int) position);
+                listeDeNote.add(position, "z1");
+            }
+
+        }
+        listeVersPartionBuilder();
+        partition.setMelodie(partitionBuilder.toString());
+        reagir();
+
+
     }
 
     public void listeVersPartionBuilder(){

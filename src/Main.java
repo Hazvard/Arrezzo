@@ -24,7 +24,7 @@ public class Main extends Application {
         VueClavier vueClavier = new VueClavier(arezzo);
         VuePartition vuePartition = new VuePartition(arezzo);
         VueOption vueOption = new VueOption(arezzo);
-        VueButton vueButton = new VueButton(arezzo);
+        VueButton vueButton = new VueButton(arezzo, primaryStage);
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(VueMenus.class)) return vueMenus;
@@ -35,6 +35,7 @@ public class Main extends Application {
             else // par défaut...
             return null ;
         });
+
 
         primaryStage.setScene(new Scene(loader.load(), 1600, 900));
         primaryStage.getIcons().add(new Image("/images/logo_azzero.png"));
