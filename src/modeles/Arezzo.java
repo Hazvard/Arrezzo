@@ -33,7 +33,7 @@ public class Arezzo {
         listeDeNote = new ArrayList<>();
         synthesizer = MidiSystem.getSynthesizer();
         partition = new Partition(synthesizer);
-        partition.setPreferedMaxWidth(900);
+        partition.setPreferedMaxWidth(800);
         observateurs = new ArrayList<>();
         titre = "Nouveau Projet";
         quartTemps = 0;
