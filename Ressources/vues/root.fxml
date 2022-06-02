@@ -10,26 +10,26 @@
 
     <top>
         <VBox>
-            <fx:include source="vues/vuemenus.fxml" />
-            <fx:include source="vues/vuetitre.fxml" />
+            <fx:include source="/vues/vuemenus.fxml" />
+            <fx:include source="/vues/vuetitre.fxml" />
         </VBox>
 
     </top>
 
     <left>
-        <fx:include source="vues/vuepartition.fxml" />
+        <fx:include source="/vues/vuepartition.fxml" />
     </left>
 
     <center>
-        <fx:include source="vues/vuebutton.fxml" />
+        <fx:include source="/vues/vuebutton.fxml" />
 
     </center >
 
     <bottom>
         <HBox prefHeight="406.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
             <children>
-               <fx:include source="vues/vueclavier.fxml" />
-                <fx:include source="vues/vueoption.fxml" />
+               <fx:include source="/vues/vueclavier.fxml" />
+                <fx:include source="/vues/vueoption.fxml" />
             </children>
         </HBox>
     </bottom>

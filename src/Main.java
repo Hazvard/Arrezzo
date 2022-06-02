@@ -18,7 +18,7 @@ public class Main extends Application {
         Arezzo arezzo = new Arezzo();
         FXMLLoader loader = new FXMLLoader();
 
-        loader.setLocation(getClass().getResource("root.fxml"));
+        loader.setLocation(getClass().getResource("/vues/root.fxml"));
 
         VueMenus vueMenus = new VueMenus(arezzo);
         VueClavier vueClavier = new VueClavier(arezzo);
